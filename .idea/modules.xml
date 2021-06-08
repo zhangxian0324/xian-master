@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/xian-common/xian-common.iml" filepath="$PROJECT_DIR$/xian-common/xian-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/xian-master.iml" filepath="$PROJECT_DIR$/xian-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xian-redisapp/xian-redisapp.iml" filepath="$PROJECT_DIR$/xian-redisapp/xian-redisapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/xian-webapp/xian-webapp.iml" filepath="$PROJECT_DIR$/xian-webapp/xian-webapp.iml" />
     </modules>
   </component>

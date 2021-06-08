@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PersonServiceImpl implements PersonServer {
-    @Autowired
     private PersonMapper personMapper;
 
     @Override

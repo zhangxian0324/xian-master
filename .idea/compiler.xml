@@ -2,18 +2,20 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xian-common" />
-        <module name="xian-master" />
+        <module name="xian-redisapp" />
         <module name="xian-webapp" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="xian-common" target="1.8" />
       <module name="xian-master" target="1.8" />
+      <module name="xian-redisapp" target="1.8" />
       <module name="xian-webapp" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -21,6 +23,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="xian-common" options="-parameters" />
       <module name="xian-master" options="-parameters" />
+      <module name="xian-redisapp" options="-parameters" />
       <module name="xian-webapp" options="-parameters" />
     </option>
   </component>

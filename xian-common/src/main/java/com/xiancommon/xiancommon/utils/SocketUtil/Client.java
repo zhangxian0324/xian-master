@@ -13,7 +13,7 @@ public class Client {
             pw.flush();
             socket.shutdownOutput();
             InputStream is = socket.getInputStream();
-           BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String info;
             while ((info = br.readLine()) != null) {
                 System.out.println("我是客户端，服务返回信息: " + info);
