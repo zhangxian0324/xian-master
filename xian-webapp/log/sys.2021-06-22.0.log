@@ -1,0 +1,3 @@
+2021-06-22 09:39:35,109 INFO (StartupInfoLogger.java:55)- Starting XianWebappApplicationTests on zhangxian with PID 16636 (started by zhangxian in D:\workspaces\xian-master\xian-webapp)
+2021-06-22 09:39:35,109 INFO (SpringApplication.java:651)- No active profile set, falling back to default profiles: default
+2021-06-22 09:39:37,054 INFO (StartupInfoLogger.java:61)- Started XianWebappApplicationTests in 2.226 seconds (JVM running for 3.171)

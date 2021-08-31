@@ -12,13 +12,13 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>xian-common</name>
     <description>common</description>
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>
