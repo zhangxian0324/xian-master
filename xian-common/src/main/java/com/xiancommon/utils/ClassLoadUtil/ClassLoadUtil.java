@@ -3,9 +3,6 @@ package com.xiancommon.utils.ClassLoadUtil;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * @author zhangxian
@@ -37,7 +34,7 @@ public class ClassLoadUtil {
          */
         serial();
         Cloud cloud5 = unSerial();
-        System.out.println(cloud5.print());
+        System.out.println(cloud5.print())  ;
 
     }
 

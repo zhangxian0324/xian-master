@@ -9,7 +9,6 @@ import java.util.Map;
  */
 public class MapUtil {
     static HashMap<String,Integer> map = new HashMap<>();
-
     public static void main(String[] args) {
         printMap();
         // tableSizeFor(18000);

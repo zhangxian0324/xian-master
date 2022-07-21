@@ -3,17 +3,18 @@ package com.xiancommon.utils.IOUtil;
 
 import java.io.File;
 
+/**
+ * @author zhangxian
+ */
 public class SaveInputIntoTxtFile {
-
     private volatile SaveInputIntoTxtFile instance = null;
-
-    private SaveInputIntoTxtFile() {
-
-    }
+    private SaveInputIntoTxtFile() {}
 
     public synchronized SaveInputIntoTxtFile getInstance() {
         if (instance == null) {
-            instance = new SaveInputIntoTxtFile();
+            synchronized(this) {
+                instance = new SaveInputIntoTxtFile();
+            }
         }
         return instance;
     }
@@ -25,4 +26,10 @@ public class SaveInputIntoTxtFile {
         return 0;
     }
 
+    public static void main(String[] args) {
+        SaveInputIntoTxtFile saveInputIntoTxtFile = new SaveInputIntoTxtFile().getInstance();
+        saveInputIntoTxtFile.createFile("D:\\test\\intput.txt","txt");
+    }
+
 }
+
