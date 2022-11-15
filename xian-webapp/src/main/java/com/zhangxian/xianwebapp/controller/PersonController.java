@@ -19,7 +19,7 @@ public class PersonController {
     @RequestMapping("/index")
     public String listPre(Model model) {
         Person preList = service.findAll();
-        System.out.println("-----------:"+ preList.toString());
+        log.info("-----------:"+ preList.toString());
         log.info("===========" + preList.getName());
         model.addAttribute("person", preList);
         return "index";

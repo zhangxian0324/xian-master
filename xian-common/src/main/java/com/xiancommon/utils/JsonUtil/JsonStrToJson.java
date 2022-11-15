@@ -1,11 +1,14 @@
 package com.xiancommon.utils.JsonUtil;
 
 import com.alibaba.fastjson.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author zhangxian
  */
 public class JsonStrToJson {
+    private final static Logger log = LoggerFactory.getLogger("JsonStrToJson.class");
 
     public static JSONObject change(String str) throws Exception {
         if (str == null || "".equals(str)) {
@@ -43,7 +46,7 @@ public class JsonStrToJson {
                 "    ]\n" +
                 "}";
         try {
-            System.out.println(change(str).toString());
+            log.info(change(str).toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

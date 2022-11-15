@@ -1,13 +1,17 @@
 package com.xiancommon.dataStructure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
  * @author zhangxian
  */
 public class MapUtil {
+    private final static Logger log = LoggerFactory.getLogger("MapUtil.class");
+    private static final int MAX_NUM = 10;
     static HashMap<String,Integer> map = new HashMap<>();
     public static void main(String[] args) {
         printMap();
@@ -16,48 +20,45 @@ public class MapUtil {
 
 
     private static void printMap() {
-        for (int i = 0;i < 10;i++) {
+        for (int i = 0;i < MAX_NUM;i++) {
             map.put(String.valueOf(i),i);
         }
-        System.out.println("keySet:");
+        log.info("keySet:");
         for(String item : map.keySet()) {
             System.out.print(item + "=" + map.get(item) + " ");
         }
-        System.out.println("\nentrySet:");
+        log.info("\nentrySet:");
         for(Map.Entry<String,Integer> entry:map.entrySet()) {
             System.out.print(entry.getKey() + "=" + entry.getValue() + " ");
         }
-        System.out.println("\nIterator:");
-        Iterator<Map.Entry<String,Integer>> iterators = map.entrySet().iterator();
-        while(iterators.hasNext()) {
-            Map.Entry<String,Integer> next = iterators.next();
-
+        log.info("\nIterator:");
+        for (Map.Entry<String, Integer> next : map.entrySet()) {
             System.out.print(next.getKey() + "=" + next.getValue() + " ");
         }
-        System.out.println("\nvalues:");
+        log.info("\nvalues:");
         for (int i : map.values()) {
             System.out.print(i);
         }
 
         // lambda
-        map.forEach((k,v)-> System.out.println(k + "=" +v + " "));
+        map.forEach((k,v)-> log.info(k + "=" +v + " "));
 
     }
 
-    static final int tableSizeFor(int cap) {
+    static int tableSizeFor(int cap) {
         int n = cap - 1;
-        System.out.println("n’binary = " + Integer.toBinaryString(n));
+        log.info("n’binary = " + Integer.toBinaryString(n));
         n |= n >>> 1;
-        System.out.println("n’binary = " + Integer.toBinaryString(n));
-        System.out.println("n = " + n);
+        log.info("n’binary = " + Integer.toBinaryString(n));
+        log.info("n = " + n);
         n |= n >>> 2;
-        System.out.println("n = " + n);
+        log.info("n = " + n);
         n |= n >>> 4;
-        System.out.println("n = " + n);
+        log.info("n = " + n);
         n |= n >>> 8;
-        System.out.println("n = " + n);
+        log.info("n = " + n);
         n |= n >>> 16;
-        System.out.println("n = " + n);
+        log.info("n = " + n);
         return (n < 0) ? 1 : (n >= 1 << 30) ? 1 << 30 : n + 1;
     }
 

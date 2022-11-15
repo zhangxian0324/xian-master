@@ -1,24 +1,28 @@
 package com.xiancommon.utils.concurrent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author zhangxian
  */
 public class ThreadSleep {
+    private final static Logger log = LoggerFactory.getLogger("ThreadSleep.class");
 
     public static void createTread(){
         new Thread(() ->{
            long startTime = System.currentTimeMillis();
             sleep(2000L);
             long endTime = System.currentTimeMillis();
-            System.out.println(String.format("Total spend %d ms",(endTime - startTime)));
+            log.info(String.format("Total spend %d ms",(endTime - startTime)));
 
         }).start();
         long startTime = System.currentTimeMillis();
         sleep(3000L);
         long endTime = System.currentTimeMillis();
-        System.out.println(String.format("Total spend %d ms",(endTime - startTime)));
+        log.info(String.format("Total spend %d ms",(endTime - startTime)));
     }
 
     public static void sleep(long time) {

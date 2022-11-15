@@ -1,9 +1,14 @@
 package com.xiancommon.utils.algorithm.sort;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.util.Scanner;
 
 public class InsertSort {
+    private final static Logger log = LoggerFactory.getLogger("InsertSort.class");
+
     /**
      * 插入排序:
      *   1、先从第一个开始，第一个已经排序好。
@@ -18,19 +23,19 @@ public class InsertSort {
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("" + (endTime - startTime) / 1000 + "s");
+        log.info("" + (endTime - startTime) / 1000 + "s");
 
     }
 
 
     public static void swap(int a,int b) {
-        System.out.println("a = " + a + ";b = " + b);
+        log.info("a = " + a + ";b = " + b);
         a = a ^ b;
-        System.out.println("a = " + a + ";b = " + b);
+        log.info("a = " + a + ";b = " + b);
         b = b ^ a;
-        System.out.println("a = " + a + ";b = " + b);
+        log.info("a = " + a + ";b = " + b);
         a = a ^ b;
-        System.out.println("a = " + a + ";b = " + b);
+        log.info("a = " + a + ";b = " + b);
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,7 @@
 package com.xiancommon.utils.SocketUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -6,6 +9,8 @@ import java.util.HashMap;
 
 
 public class Server {
+    private final static Logger log = LoggerFactory.getLogger("Server.class");
+
     public static void conn() {
         try {
             ServerSocket serverSocket = new ServerSocket(8088);
@@ -15,7 +20,7 @@ public class Server {
                 ServerThread serverThread = new ServerThread(socket);
                 serverThread.start();
                 InetAddress address = socket.getInetAddress();
-                System.out.println("当前客户端的IP：" + address.getHostAddress());
+                log.info("当前客户端的IP：" + address.getHostAddress());
             }
         } catch (Exception e) {
             e.printStackTrace();

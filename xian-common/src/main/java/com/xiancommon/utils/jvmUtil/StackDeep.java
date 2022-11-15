@@ -1,6 +1,11 @@
 package com.xiancommon.utils.jvmUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class StackDeep {
+    private final static Logger log = LoggerFactory.getLogger("StackDeep.class");
+
     private static int count = 0;
     public static void recursion() {
         count++;
@@ -10,7 +15,7 @@ public class StackDeep {
         try {
             recursion();
         } catch (Throwable e) {
-            System.out.println("deep of calling = " + count);
+            log.info("deep of calling = " + count);
             e.printStackTrace();
         }
     }

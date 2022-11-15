@@ -1,5 +1,8 @@
 package com.xiancommon.utils.algorithm.leetcode.findMedianSortedArrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -10,6 +13,8 @@ import java.util.List;
  * @Dec 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的 中位数 。
  */
 public class FindMedianSortedArrays {
+    private final static Logger log = LoggerFactory.getLogger("HeapClass.class");
+
     /**
      * 暴力算法：把两个数组先排序，在找中位数。
      * @return
@@ -25,7 +30,7 @@ public class FindMedianSortedArrays {
         System.arraycopy(nums1,0,temp,0,m);
         System.arraycopy(nums2,0,temp,m,n);
         Arrays.sort(temp);
-        System.out.println(Arrays.toString(temp));
+        log.info(Arrays.toString(temp));
         if (tempLen % 2 == 1) {
             return temp[(tempLen - 1) / 2];
         } else {
@@ -37,9 +42,9 @@ public class FindMedianSortedArrays {
     public static void main(String[] args) {
         int[] nums1 = {1,2};
         int[] nums2 = {3,4};
-       System.out.println(find(nums1,nums2));
+       log.info(find(nums1,nums2) + "");
 
-        System.out.println(5 / 2);
+        log.info(""+ 5 / 2 );
 
     }
 }

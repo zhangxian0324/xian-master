@@ -1,9 +1,17 @@
 package com.xiancommon.utils.dataAndStructure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
+/**
+ * @author zhangxian
+ */
 public class BubbleSort {
+    private final static Logger log = LoggerFactory.getLogger("BubbleSort.class");
+
     public static void main(String[] args) {
         int maxSize = 100;
         ArrayBub arr;
@@ -22,12 +30,12 @@ public class BubbleSort {
         arr.insert(543);
         arr.insert(543);
         arr.display();
-        System.out.println("前后对比：");
+        log.info("前后对比：");
         arr.selectSortImp();
         arr.display();
 
         // StringBuffer StringBuilder
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuffer = new StringBuilder();
         StringBuilder stringBuilder = new StringBuilder();
     }
 }

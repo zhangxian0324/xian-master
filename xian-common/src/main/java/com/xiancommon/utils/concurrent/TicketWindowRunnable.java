@@ -1,11 +1,16 @@
 package com.xiancommon.utils.concurrent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.jws.Oneway;
 
 /**
  * @author zhangxian
  */
 public class TicketWindowRunnable implements Runnable {
+    private final static Logger log = LoggerFactory.getLogger("TicketWindowRunnable.class");
+
     private int index = 1;
     private final static int MAX = 5;
     private final static Object MUTEX = new Object();
@@ -13,7 +18,7 @@ public class TicketWindowRunnable implements Runnable {
     public void run() {
         synchronized (MUTEX) {
             while (index <= MAX) {
-                System.out.println(Thread.currentThread().getName() + "的号码是：" + (index++));
+                log.info(Thread.currentThread().getName() + "的号码是：" + (index++));
             }
         }
     }

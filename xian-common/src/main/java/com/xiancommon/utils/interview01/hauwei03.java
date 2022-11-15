@@ -1,5 +1,8 @@
 package com.xiancommon.utils.interview01;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -7,10 +10,12 @@ import java.util.Scanner;
  * @author zhangxian
  */
 public class hauwei03 {
+    private final static Logger log = LoggerFactory.getLogger("hauwei03.class");
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String string = in.nextLine();
-        System.out.println(string);
+        log.info(string);
         char[] arr = string.toCharArray();
         StringBuffer s = new StringBuffer();
         for (int i = 0;i < arr.length -1;i++) {
@@ -30,7 +35,7 @@ public class hauwei03 {
                 s.append(arr[i]);
             }
         }
-        System.out.println(s.toString());
+        log.info(s.toString());
 
     }
 

@@ -1,9 +1,14 @@
 package com.xiancommon.utils.SocketUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.net.Socket;
 
 public class Client {
+    private final static Logger log = LoggerFactory.getLogger("Client.class");
+
     public static void sendMessage() {
         try {
             Socket socket = new Socket("localhost",8088);
@@ -16,7 +21,7 @@ public class Client {
             BufferedReader br = new BufferedReader(new InputStreamReader(is));
             String info;
             while ((info = br.readLine()) != null) {
-                System.out.println("我是客户端，服务返回信息: " + info);
+                log.info("我是客户端，服务返回信息: " + info);
             }
             br.close();
             is.close();

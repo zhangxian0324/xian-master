@@ -1,5 +1,8 @@
 package com.xiancommon.utils.ClassLoadUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -8,6 +11,8 @@ import java.lang.reflect.InvocationTargetException;
  * @author zhangxian
  */
 public class ClassLoadUtil {
+    private final static Logger log = LoggerFactory.getLogger("CalUtil.class");
+
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException, IOException {
         /**
          * forName
@@ -34,7 +39,7 @@ public class ClassLoadUtil {
          */
         serial();
         Cloud cloud5 = unSerial();
-        System.out.println(cloud5.print())  ;
+        log.info(cloud5.print())  ;
 
     }
 

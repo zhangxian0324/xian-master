@@ -1,13 +1,18 @@
 package com.xiancommon.utils.annotationUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.lang.reflect.Field;
 
 /**
  * @author zhangxian
  */
 public class MyMain {
+    private final static Logger log = LoggerFactory.getLogger("MyMain.class");
+
     public static void main(String[] args) {
-        System.out.println(buildSql());
+        log.info(buildSql());
     }
 
     public static String buildSql() {

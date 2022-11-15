@@ -1,5 +1,8 @@
 package com.xiancommon.utils.SocketUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import java.net.Socket;
 
@@ -7,6 +10,8 @@ import java.net.Socket;
  * @author zhangxian
  */
 public class ServerThread extends Thread {
+    private final static Logger log = LoggerFactory.getLogger("ServerThread.class");
+
     private Socket socket = null;
 
     public ServerThread(Socket socket) {
@@ -26,7 +31,7 @@ public class ServerThread extends Thread {
             br = new BufferedReader(isr);
             String info = null;
             while ((info = br.readLine()) != null) {
-                System.out.println("我是服务端，客户端说：" + info);
+                log.info("我是服务端，客户端说：" + info);
             }
             socket.shutdownInput();
             os = socket.getOutputStream();

@@ -1,18 +1,23 @@
 package com.xiancommon.utils.interview01;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.*;
 
 public class Huawei01 {
+    private final static Logger log = LoggerFactory.getLogger("Huawei01.class");
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         // 手中的牌
         String HandInString = in.nextLine();
-        System.out.println(HandInString);
+        log.info(HandInString);
         // 已出的牌
         String HandOutString = in.nextLine();
-        System.out.println(HandInString);
+        log.info(HandInString);
 
-        System.out.println(find(HandInString,HandOutString));
+        log.info(find(HandInString,HandOutString));
 
     }
 

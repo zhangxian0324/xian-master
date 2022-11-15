@@ -1,5 +1,8 @@
 package com.zhangxian.xianwebapp.Utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -7,6 +10,8 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class StringUtil {
+    private final static Logger log = LoggerFactory.getLogger("Util.class");
+
     public static void main(String[] args) {
 /*
         HashMap<String,String> map = new HashMap<>();
@@ -27,10 +32,10 @@ public class StringUtil {
 
         int f = a % 1; // 求余
 
-        System.out.println("c = " + c);
-        System.out.println("d = " + d);
-        System.out.println("e = " + e);
-        System.out.println("f = " + f);
+        log.info("c = " + c);
+        log.info("d = " + d);
+        log.info("e = " + e);
+        log.info("f = " + f);
 
         List<Integer> arr = new LinkedList();
         ArrayList<Integer> arr1 = new ArrayList();
@@ -44,7 +49,7 @@ public class StringUtil {
     }
 
     private static void print(Object s) {
-        System.out.println(s);
+        log.info("",s);
         
     }
 

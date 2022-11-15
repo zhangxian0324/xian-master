@@ -1,5 +1,8 @@
 package com.xiancommon.utils.concurrent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -9,13 +12,15 @@ import java.util.concurrent.Executors;
  * @author zhangxian
  */
 public class CountDownLatchDemo implements Runnable{
+    private final static Logger log = LoggerFactory.getLogger("CountDownLatchDemo.class");
+
     static final CountDownLatch end = new CountDownLatch(10);
     static final CountDownLatchDemo demo = new CountDownLatchDemo();
     @Override
     public void run() {
         try {
             Thread.sleep(new Random().nextInt(10) * 1000);
-            System.out.println("check complete...");
+            log.info("check complete...");
             end.countDown();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -28,7 +33,7 @@ public class CountDownLatchDemo implements Runnable{
             executorService.submit(demo);
         }
         end.await();
-        System.out.println("Fire!!!");
+        log.info("Fire!!!");
         executorService.shutdown();
 
     }

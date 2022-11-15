@@ -50,13 +50,4 @@ public class LuoMaNum {
 
     }
 
-
-
-    public static void main(String[] args) {
-        int a = 11;
-        int b = 200;
-        System.out.println(intToRoman(b));
-        System.out.println(RomanToInt("XXXVVVVVVVVVVVVVVVVVVVVVVI"));
-    }
-
 }

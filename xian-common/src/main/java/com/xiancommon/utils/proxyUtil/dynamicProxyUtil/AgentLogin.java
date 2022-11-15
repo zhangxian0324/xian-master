@@ -1,4 +1,7 @@
 package com.xiancommon.utils.proxyUtil.dynamicProxyUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import static com.xiancommon.utils.proxyUtil.dynamicProxyUtil.LoginStatusEnum.SUCCESS;
 import static com.xiancommon.utils.proxyUtil.dynamicProxyUtil.LoginStatusEnum.FIAL;
 import static com.xiancommon.utils.proxyUtil.dynamicProxyUtil.LoginStatusEnum.UNKOWN;
@@ -7,26 +10,28 @@ import static com.xiancommon.utils.proxyUtil.dynamicProxyUtil.LoginStatusEnum.UN
  * @author zhangxian
  */
 public class AgentLogin implements LoginInterface {
+    private final static Logger log = LoggerFactory.getLogger("AgentLogin.class");
+
     private Object LoginStatusEnum;
     @Override
     public LoginStatusEnum login() {
-        System.out.println("agent login--------");
+        log.info("agent login--------");
         /**
          * 登录逻辑；
          */
         LoginStatusEnum REUSLT = SUCCESS;
         switch (REUSLT) {
             case SUCCESS:
-                System.out.println(SUCCESS.name());
+                log.info(SUCCESS.name());
                 break;
             case FIAL:
-                System.out.println(FIAL.name());
+                log.info(FIAL.name());
                 break;
             case UNKOWN:
-                System.out.println(UNKOWN.name());
+                log.info(UNKOWN.name());
                 break;
             default:
-                System.out.println("default");
+                log.info("default");
 
         }
         return REUSLT;

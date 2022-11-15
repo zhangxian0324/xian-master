@@ -1,5 +1,8 @@
 package com.xiancommon.utils.enumStudy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.EnumMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -40,27 +43,6 @@ public enum Season {
     @Override
     public String toString() {
         return this.val + ":" + this.dec;
-    }
-
-    public static void main(String[] args) {
-       // System.out.println(Season.SPRING.toString());
-       System.out.println(Season.SPRING.name());
-
-       for (Season season : Season.values()) {
-           System.out.println(season);
-       }
-
-        EnumMap<Season,String> map = new EnumMap<>(Season.class);
-       map.put(Season.SPRING,"Spring");
-       map.put(Season.SUMMER,"SUMMER");
-       map.put(Season.AUTUMN,"AUTUMN");
-       map.put(Season.WINTER,"WINTER");
-       Iterator<Map.Entry<Season,String>> iterator = map.entrySet().iterator();
-        while(iterator.hasNext())  {
-            Map.Entry<Season,String> item = iterator.next();
-            System.out.println(item.getKey().name() + "==" + item.getValue());
-        }
-
     }
 
 }

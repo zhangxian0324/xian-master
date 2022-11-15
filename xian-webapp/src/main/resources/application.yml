@@ -18,7 +18,5 @@ mybatis:
   mapper-locations: classpath*:mapper/*Mapper.xml
 
 logging:
-  config: classpath:logback.xml
-  level:
-    com.zhangxian.xianwebapp: info
+  config: classpath:logback-spring.xml
 

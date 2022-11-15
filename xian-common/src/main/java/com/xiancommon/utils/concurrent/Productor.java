@@ -1,9 +1,14 @@
 package com.xiancommon.utils.concurrent;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
 public class Productor implements Runnable {
+    private final static Logger log = LoggerFactory.getLogger("Productor.class");
+
     private BlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<Integer>(100);
     public Productor(BlockingQueue<Integer> blockingQueue) {
         this.blockingQueue = blockingQueue;
@@ -23,22 +28,22 @@ public class Productor implements Runnable {
         String a = "1";
         switch (a) {
             case "1":
-                System.out.println("a");
+                log.info("a");
                 break;
             case "2":
-                System.out.println("b");
+                log.info("b");
                 break;
             case "3":
-                System.out.println("c");
+                log.info("c");
                 break;
             case "4":
-                System.out.println("d");
+                log.info("d");
                 break;
             case "5":
-                System.out.println("e");
+                log.info("e");
                 break;
             default:
-                System.out.println("default");
+                log.info("default");
         }
     }
 }

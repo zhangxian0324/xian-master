@@ -1,11 +1,15 @@
 package com.xiancommon.dataStructure;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Stack;
 
 /**
  * @author zhangxian
  */
 public class HeapClass {
+    private final static Logger log = LoggerFactory.getLogger("HeapClass.class");
     static Stack<String> stack = new Stack<>();
     public static void main(String[] args) {
         stack.add("1");
@@ -15,14 +19,14 @@ public class HeapClass {
         /**
          *  pop 先弹出在删除
          */
-        System.out.println(stack.pop());
-        System.out.println(stack.toString());
+        log.info(stack.pop());
+        log.info(stack.toString());
         /**
          *  pop 只
          */
-        System.out.println(stack.peek());
+        log.info(stack.peek());
 
-        System.out.println(stack.toString());
+        log.info(stack.toString());
 
 
 

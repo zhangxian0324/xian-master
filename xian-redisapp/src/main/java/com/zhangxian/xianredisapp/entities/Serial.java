@@ -1,8 +1,13 @@
 package com.zhangxian.xianredisapp.entities;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 
 public class Serial {
+    private final static Logger log = LoggerFactory.getLogger("Serial.class");
+
     /**
      * 序列化
      * @throws IOException
@@ -41,7 +46,7 @@ public class Serial {
             fis = new FileInputStream("cust.txt");
             ois = new ObjectInputStream(fis);
             customerEntity = (CustomerEntity) ois.readObject();
-            System.out.println(customerEntity.toString());
+            log.info(customerEntity.toString());
         } catch (IOException | ClassNotFoundException e1) {
             e1.printStackTrace();
         } finally {

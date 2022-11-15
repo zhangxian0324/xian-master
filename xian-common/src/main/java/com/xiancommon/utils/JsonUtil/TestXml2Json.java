@@ -4,6 +4,8 @@ package com.xiancommon.utils.JsonUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.dom4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,16 +13,19 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.util.List;
 
+
 /**
- * Created by chengsheng on 2015/8/19.
+ * @author zhangxian
  */
 public class TestXml2Json {
+    private final static Logger log = LoggerFactory.getLogger("TestXml2Json.class");
+
     public static void main(String[] args) throws Exception {
         String xmlStr= readFile("D:/ADA/et/Issue_20130506_back.xml");
         Document doc= DocumentHelper.parseText(xmlStr);
         JSONObject json=new JSONObject();
         dom4j2Json(doc.getRootElement(),json);
-        System.out.println("xml2Json:"+json.toJSONString());
+        log.info("xml2Json:"+json.toJSONString());
 
     }
 

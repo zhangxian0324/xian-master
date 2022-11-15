@@ -1,18 +1,23 @@
 package com.xiancommon.utils.interview01;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Scanner;
 
 public class Huawei02 {
+    private final static Logger log = LoggerFactory.getLogger("Huawei02.class");
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String line01 = in.nextLine();
         String line02 = in.nextLine();
         String line03 = in.nextLine();
         String line04 = in.nextLine();
-        System.out.println(line01);
-        System.out.println(line02);
-        System.out.println(line03);
-        System.out.println(line04);
+        log.info(line01);
+        log.info(line02);
+        log.info(line03);
+        log.info(line04);
         String[] arr01 = line01.split(" ");
         String[] arr02 = line02.split(" ");
         String[] arr03 = line03.split(" ");
@@ -26,7 +31,7 @@ public class Huawei02 {
             result = 0;
         }
         result= windth * heigth;
-        System.out.println(result);
+        log.info(result + "");
 
 
     }

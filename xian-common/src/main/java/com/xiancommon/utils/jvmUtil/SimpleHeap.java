@@ -1,12 +1,17 @@
 package com.xiancommon.utils.jvmUtil;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class SimpleHeap {
+    private final static Logger log = LoggerFactory.getLogger("SimpleHeap.class");
+
     private int id;
     public SimpleHeap(int id) {
         this.id = id;
     }
     public void show() {
-        System.out.println("My ID is " + id);
+        log.info("My ID is " + id);
     }
 
     public static void main(String[] args) {
