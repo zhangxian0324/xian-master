@@ -12,10 +12,8 @@ public class HeapClass {
     private final static Logger log = LoggerFactory.getLogger("HeapClass.class");
     static Stack<String> stack = new Stack<>();
     public static void main(String[] args) {
-        stack.add("1");
-        stack.add("2");
-        stack.add("3");
-        stack.add("4");
+        stack.add("1");stack.add("2");
+        stack.add("3");stack.add("4");
         /**
          *  pop 先弹出在删除
          */
@@ -25,12 +23,10 @@ public class HeapClass {
          *  pop 只
          */
         log.info(stack.peek());
-
         log.info(stack.toString());
 
-
-
     }
+
 
 
 }

@@ -14,7 +14,6 @@ public class DigitUtil {
         for (int i = 0;i < s.length();i++) {
             char temp1 = arr[i];
             if (Character.isDigit(temp1)){
-                
             }
         }
         return 0;

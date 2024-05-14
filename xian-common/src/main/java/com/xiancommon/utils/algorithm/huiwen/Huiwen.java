@@ -28,7 +28,6 @@ public class Huiwen {
         if (len < 2) {
             return s;
         }
-
         int maxLen = 1;
         int begin = 0;
         // dp[i][j] 表示 s[i..j] 是否是回文串

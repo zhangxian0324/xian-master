@@ -21,6 +21,5 @@ public class BinSearch {
             }
         }
         return 0;
-
     }
 }

@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
  */
 public class MyAspect {
     private final static Logger log = LoggerFactory.getLogger("MyAspect.class");
-
     public void piontCut() {
+        log.info("===");
 
     }
 

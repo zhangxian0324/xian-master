@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class StringUtil {
-    private final static Logger log = LoggerFactory.getLogger("StringUtil.class");
+        private final static Logger log = LoggerFactory.getLogger("StringUtil.class");
     public static void main(String[] args) {
      /* String a = "23o4u23osdfndsklnfks";
       char[] arr = a.toCharArray();
