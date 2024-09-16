@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 
 public class Base {
     private final static Logger log = LoggerFactory.getLogger("Base.class");
-
     //
     public static void print() {
         //

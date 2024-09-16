@@ -1,7 +1,5 @@
 package com.xiancommon.utils.proxyUtil.CGLibProxy;
 
-import com.xiancommon.utils.proxyUtil.dynamicProxyUtil.AgentLogin;
-import com.xiancommon.utils.proxyUtil.dynamicProxyUtil.LoginInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cglib.proxy.Enhancer;

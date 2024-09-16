@@ -1,9 +1,11 @@
 package com.xiancommon.dataStructure;
 
+import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 
 /**
@@ -14,7 +16,13 @@ public class MapUtil {
     private static final int MAX_NUM = 10;
     static HashMap<String,Integer> map = new HashMap<>();
     public static void main(String[] args) {
-        printMap();
+        HashSet<String> hashSet = new HashSet<>();
+        for(long i = 0;i < 10000000;i++) {
+            hashSet.add(11111111111L + i + "");
+        }
+        System.out.println(hashSet.size());
+        System.out.println(ObjectSizeCalculator.getObjectSize(hashSet));
+//        printMap();
         // tableSizeFor(18000);
     }
 
