@@ -8,12 +8,10 @@
         <artifactId>xian-master</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.zhangxian</groupId>
     <artifactId>xian-webapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xian-webapp</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>1.8</java.version>
     </properties>

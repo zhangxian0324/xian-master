@@ -7,7 +7,6 @@
         <artifactId>xian-master</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.zhangxian</groupId>
     <artifactId>xian-redisapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xian-redisapp</name>
@@ -33,12 +32,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>redis.clients</groupId>
