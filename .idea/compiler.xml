@@ -8,21 +8,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xian-common" />
-        <module name="xian-redisapp" />
         <module name="xian-webapp" />
+        <module name="xian-redisapp" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="xian-common" target="1.8" />
-      <module name="xian-master" target="1.8" />
-      <module name="xian-redisapp" target="1.8" />
-      <module name="xian-webapp" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="xian-common" options="-parameters" />
-      <module name="xian-master" options="-parameters" />
+      <module name="xian-master" options="" />
       <module name="xian-redisapp" options="-parameters" />
       <module name="xian-webapp" options="-parameters" />
     </option>

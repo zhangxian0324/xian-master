@@ -20,7 +20,7 @@ public class QuickSort {
         if (null == a || a.length < 2) {
             return;
         }
-        Stack<Integer> stack = new Stack<>();
+        Stack<Integer> stack = new Stack<Integer>();
         stack.push(low);
         stack.push(high);
         while (!stack.isEmpty()) {

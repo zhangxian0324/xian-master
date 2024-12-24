@@ -38,8 +38,8 @@ public class Huiwen01 {
         if (arr.length < 4) {
             result = "NONE";
         }
-        for (int i = 0;i < arr.length;i++) {
-            if ("joker".equalsIgnoreCase(arr[i])) {
+        for (String s : arr) {
+            if ("joker".equalsIgnoreCase(s)) {
                 result = "ERROR";
                 System.out.print(result);
                 return;

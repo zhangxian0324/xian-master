@@ -11,6 +11,7 @@ import java.util.concurrent.Executors;
 /**
  * @author zhangxian
  */
+
 public class CountDownLatchDemo implements Runnable{
     private final static Logger log = LoggerFactory.getLogger("CountDownLatchDemo.class");
 
