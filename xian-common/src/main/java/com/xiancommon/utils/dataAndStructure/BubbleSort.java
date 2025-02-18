@@ -3,9 +3,6 @@ package com.xiancommon.utils.dataAndStructure;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.CyclicBarrier;
-
 /**
  * @author zhangxian
  */
@@ -41,22 +38,22 @@ public class BubbleSort {
 }
 
 class ArrayBub {
-   private long[] a;
+   private final long[] arr;
    private int nElem;
 
    public ArrayBub(int max) {
-        a = new long[max];
+       arr = new long[max];
         nElem = 0;
    }
 
    public void insert(long value) {
-       a[nElem] = value;
+       arr[nElem] = value;
        nElem++;
    }
 
    public void display() {
        for (int j = 0;j < nElem;j++) {
-           System.out.print(a[j] + ",");
+           System.out.print(arr[j] + ",");
        }
        System.out.println();
    }
@@ -66,7 +63,7 @@ class ArrayBub {
        int out,in;
        for (out = nElem - 1;out > 1;out--) {
            for (in = 0;in < out;in++) {
-               if (a[in] > a[in+1]) {
+               if (arr[in] > arr[in+1]) {
                    swap(in,in+1);
                }
            }
@@ -79,7 +76,7 @@ class ArrayBub {
        for (out = 0;out < nElem - 1;out++) {
            min = out;
            for (in = out + 1; in < nElem;in++) {
-               if (a[in] < a[min]) {
+               if (arr[in] < arr[min]) {
                    min = in;
                }
                swap(out,min);
@@ -88,8 +85,8 @@ class ArrayBub {
    }
 
    private void swap(int one,int two) {
-        long temp = a[one];
-        a[one] = a[two];
-        a[two] = temp;
+        long temp = arr[one];
+       arr[one] = arr[two];
+       arr[two] = temp;
    }
 }

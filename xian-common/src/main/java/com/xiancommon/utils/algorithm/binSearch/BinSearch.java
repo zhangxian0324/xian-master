@@ -9,15 +9,15 @@ public class BinSearch {
         if (arr == null) {
             return -1;
         }
-        int lo = 0,mid = 0,len = arr.length;
+        int lo = 0,mid,len = arr.length;
         while (lo <= len) {
             mid = (lo + len) / 2;
             if (arr[mid] == target) {
-                return mid +1;
+                return mid + 1;
             } else if (arr[mid] < target) {
                 lo = mid + 1;
             } else {
-                len = mid -1;
+                len = mid - 1;
             }
         }
         return 0;
