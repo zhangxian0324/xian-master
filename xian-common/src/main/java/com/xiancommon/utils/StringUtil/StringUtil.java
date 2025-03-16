@@ -4,22 +4,33 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.util.*;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class StringUtil {
-        private final static Logger log = LoggerFactory.getLogger("StringUtil.class");
-    public static void main(String[] args) {
-     /* String a = "23o4u23osdfndsklnfks";
-      char[] arr = a.toCharArray();
-      for (int i = 0; i < arr.length;i++) {
-          log.info(i + "_" + arr[i]);
-      }
-*/
-       SimpleDateFormat simpleDateFormat =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-       SimpleDateFormat simpleDateFormat1 =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.CHINA);
-       Date date = new Date();
-       System.out.println(simpleDateFormat.format(date));
-       System.out.println(simpleDateFormat1.format(date));
+    private final static Logger log = LoggerFactory.getLogger("StringUtil.class");
+    public static ThreadPoolExecutor threadPoolExecutor;
+    static {
+        threadPoolExecutor = new ThreadPoolExecutor(2, 100,1000, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
     }
+
+    public static void main(String[] args) {
+
+    }
+
+
+    public static int getRandom() {
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            list.add(ThreadLocalRandom.current().nextInt(100000));
+        }
+        int randomIndex = ThreadLocalRandom.current().nextInt(list.size());
+        System.out.println(randomIndex);
+        return list.get(randomIndex);
+    }
+
+
 }

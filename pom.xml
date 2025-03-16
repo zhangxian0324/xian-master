@@ -17,6 +17,7 @@
         <module>xian-common</module>
         <module>xian-webapp</module>
         <module>xian-redisapp</module>
+        <module>xian-ai</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>

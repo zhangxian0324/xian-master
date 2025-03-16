@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="xian-common" />
         <module name="xian-webapp" />
+        <module name="xianAI" />
         <module name="xian-redisapp" />
       </profile>
     </annotationProcessing>
@@ -19,6 +20,7 @@
       <module name="xian-master" options="" />
       <module name="xian-redisapp" options="-parameters" />
       <module name="xian-webapp" options="-parameters" />
+      <module name="xianAI" options="-parameters" />
     </option>
   </component>
 </project>

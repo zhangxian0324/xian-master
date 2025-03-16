@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/xian-common/pom.xml" />
         <option value="$PROJECT_DIR$/xian-webapp/pom.xml" />
         <option value="$PROJECT_DIR$/xian-redisapp/pom.xml" />
+        <option value="$PROJECT_DIR$/xian-ai/pom.xml" />
       </list>
     </option>
   </component>

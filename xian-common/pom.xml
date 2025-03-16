@@ -6,7 +6,6 @@
         <artifactId>xian-master</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.xian-common</groupId>
     <artifactId>xian-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xian-common</name>
