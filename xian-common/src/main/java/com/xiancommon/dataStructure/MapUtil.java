@@ -21,7 +21,7 @@ public class MapUtil {
             hashSet.add(11111111111L + i + "");
         }
         System.out.println(hashSet.size());
-        System.out.println(ObjectSizeCalculator.getObjectSize(hashSet));
+        System.out.println(ObjectSizeCalculator.getObjectSize(hashSet) / 1024);
 //        printMap();
         // tableSizeFor(18000);
     }

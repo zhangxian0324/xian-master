@@ -1,7 +1,5 @@
 package com.xiancommon.utils.concurrent;
 
-import sun.awt.image.ImageWatched;
-
 import java.util.LinkedList;
 
 public class EventQueue {

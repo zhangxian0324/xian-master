@@ -1,6 +1,5 @@
 package com.xiancommon.utils.algorithm.huiwen;
 
-
 public class Huiwen {
     public String longestPalindrome(String s) {
         int len = s.length();

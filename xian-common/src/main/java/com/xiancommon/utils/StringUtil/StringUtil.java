@@ -18,7 +18,13 @@ public class StringUtil {
     }
 
     public static void main(String[] args) {
-
+        int num_1 = 6;
+        int num_2 = 6;
+        if (num_2 >= num_1){
+            System.out.println("this is true");
+        } else {
+            System.out.println("this is false");
+        }
     }
 
 
