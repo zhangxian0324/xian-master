@@ -6,6 +6,7 @@
         <artifactId>xian-master</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <groupId>com.xian-common</groupId>
     <artifactId>xian-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>xian-common</name>
@@ -26,6 +27,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+            <version>1.2.83</version>
             <version>1.2.83</version>
         </dependency>
         <dependency>
