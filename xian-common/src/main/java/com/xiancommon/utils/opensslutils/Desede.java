@@ -2,6 +2,8 @@ package com.xiancommon.utils.opensslutils;
 
 /*字符串 DESede(3DES) 加密*/
 
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
 import java.security.*;
 
 import javax.crypto.*;
@@ -120,7 +122,7 @@ public class Desede {
 
         // 添加新安全算法,如果用JCE就要把它添加进去
 
-        Security.addProvider(new com.sun.crypto.provider.SunJCE());
+        Security.addProvider(new BouncyCastleProvider());
 
         final byte[] keyBytes = {0x11, 0x22, 0x4F, 0x58,
 

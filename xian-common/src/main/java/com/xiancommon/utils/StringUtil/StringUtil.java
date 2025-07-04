@@ -3,7 +3,6 @@ package com.xiancommon.utils.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
@@ -21,9 +20,9 @@ public class StringUtil {
         int num_1 = 6;
         int num_2 = 6;
         if (num_2 >= num_1){
-            System.out.println("this is true");
+            log.info("this is true");
         } else {
-            System.out.println("this is false");
+            log.info("this is false");
         }
     }
 
@@ -34,7 +33,7 @@ public class StringUtil {
             list.add(ThreadLocalRandom.current().nextInt(100000));
         }
         int randomIndex = ThreadLocalRandom.current().nextInt(list.size());
-        System.out.println(randomIndex);
+        log.info(""+randomIndex);
         return list.get(randomIndex);
     }
 

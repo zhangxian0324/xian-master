@@ -3,7 +3,6 @@ package com.xiancommon.utils.concurrent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.jws.Oneway;
 
 /**
  * @author zhangxian

@@ -1,6 +1,6 @@
 package com.xiancommon.dataStructure;
 
-import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+import org.openjdk.jol.info.ClassLayout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,7 +21,7 @@ public class MapUtil {
             hashSet.add(11111111111L + i + "");
         }
         System.out.println(hashSet.size());
-        System.out.println(ObjectSizeCalculator.getObjectSize(hashSet) / 1024);
+        System.out.println(ClassLayout.parseInstance(hashSet).toPrintable());
 //        printMap();
         // tableSizeFor(18000);
     }
