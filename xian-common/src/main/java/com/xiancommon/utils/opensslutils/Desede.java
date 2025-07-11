@@ -2,7 +2,9 @@ package com.xiancommon.utils.opensslutils;
 
 /*字符串 DESede(3DES) 加密*/
 
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.*;
 
@@ -13,6 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class Desede {
 
     private static final String Algorithm = "DESede"; // 定义 加密算法,可用
+    private static final Logger log = LoggerFactory.getLogger(Desede.class);
     // DES,DESede,Blowfish
 
     // keybyte为加密密钥，长度为24字节
@@ -37,7 +40,7 @@ public class Desede {
 
         } catch (java.security.NoSuchAlgorithmException e1) {
 
-            e1.printStackTrace();
+            log.error("e1:",e1.getMessage());
 
         } catch (javax.crypto.NoSuchPaddingException e2) {
 
@@ -121,8 +124,6 @@ public class Desede {
     public static void main(String[] args) {
 
         // 添加新安全算法,如果用JCE就要把它添加进去
-
-        Security.addProvider(new BouncyCastleProvider());
 
         final byte[] keyBytes = {0x11, 0x22, 0x4F, 0x58,
 
