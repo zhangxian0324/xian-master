@@ -2,11 +2,8 @@ package com.xiancommon.utils.opensslutils;
 
 /*字符串 DESede(3DES) 加密*/
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.security.*;
 
 import javax.crypto.*;
 
@@ -65,7 +62,6 @@ public class Desede {
         try {
 
             // 生成密钥
-
             SecretKey deskey = new SecretKeySpec(keybyte, Algorithm);
 
             // 解密
@@ -95,7 +91,6 @@ public class Desede {
     }
 
     // 转换成十六进制字符串
-
     public static String byte2hex(byte[] b) {
 
         String hs = "";
