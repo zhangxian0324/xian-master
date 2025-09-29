@@ -3,6 +3,7 @@ package com.xiancommon.utils.algorithm.binSearch;
 /**
  * 排序后才能二分查找
  * @author zhangxian
+ * @date 2025-07-16 13:05
  */
 public class BinSearch {
     public int find(int[] arr,int target) {
