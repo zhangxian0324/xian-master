@@ -2,10 +2,11 @@ package com.zhangxian.xianredisapp.controller;
 
 import com.zhangxian.xianredisapp.entities.CustomerEntity;
 import com.zhangxian.xianredisapp.utils.redisUtils.RedisUtil;
+import jakarta.annotation.Resource;
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 
 @RequestMapping("/redis")
 @RestController

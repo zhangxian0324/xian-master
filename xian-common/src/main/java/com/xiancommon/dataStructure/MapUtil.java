@@ -22,8 +22,6 @@ public class MapUtil {
         }
         System.out.println(hashSet.size());
         System.out.println(ClassLayout.parseInstance(hashSet).toPrintable());
-//        printMap();
-        // tableSizeFor(18000);
     }
 
 

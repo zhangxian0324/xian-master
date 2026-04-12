@@ -1,7 +1,10 @@
+
 server:
-  port: 9090
+  port: 8080
 
 spring:
+  profiles:
+    active: dev
   datasource:
     url: jdbc:mysql://39.106.164.190:3306/mysql?characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
@@ -19,4 +22,7 @@ mybatis:
 
 logging:
   config: classpath:logback-spring.xml
+  file:
+    path:
+      file: ./logs/web/
 

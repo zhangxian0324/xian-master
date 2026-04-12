@@ -2,13 +2,13 @@ package com.zhangxian.xianwebapp.controller;
 
 import com.zhangxian.xianwebapp.pojo.Person;
 import com.zhangxian.xianwebapp.servers.PersonServer;
+import jakarta.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.annotation.Resource;
 
 @Controller
 public class PersonController {
@@ -19,8 +19,8 @@ public class PersonController {
     @RequestMapping("/index")
     public String listPre(Model model) {
         Person preList = service.findAll();
-        log.info("-----------:"+ preList.toString());
-        log.info("===========" + preList.getName());
+        log.info("-----------:{}", preList.toString());
+        log.info("==========={}", preList.getName());
         model.addAttribute("person", preList);
         return "index";
     }

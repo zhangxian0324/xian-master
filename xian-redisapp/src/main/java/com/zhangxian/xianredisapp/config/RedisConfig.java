@@ -1,32 +1,46 @@
 package com.zhangxian.xianredisapp.config;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.GenericJacksonJsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.jsontype.BasicPolymorphicTypeValidator;
+import tools.jackson.databind.jsontype.PolymorphicTypeValidator;
 
 @Configuration
 public class RedisConfig {
+
     @Bean
-    @SuppressWarnings("all")
-    public RedisTemplate<String,Object> redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String,Object> template = new RedisTemplate<>();
-        template.setConnectionFactory(factory);
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-        ObjectMapper om = new ObjectMapper();
-        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        jackson2JsonRedisSerializer.setObjectMapper(om);
-        StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-        template.setKeySerializer(stringRedisSerializer);
-        template.setHashKeySerializer(stringRedisSerializer);
-        template.setValueSerializer(jackson2JsonRedisSerializer);
-        template.setHashValueSerializer(jackson2JsonRedisSerializer);
+    public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(connectionFactory);
+
+        PolymorphicTypeValidator typeValidator = BasicPolymorphicTypeValidator.builder()
+                                                                              .allowIfSubType(
+                                                                                      Object.class)   // 允许所有子类型（谨慎）
+                                                                              // .allowIfSubType("com.example.entity.")  // 更安全的做法
+                                                                              .build();
+
+        // 2. 构建 Jackson 3 的 JsonMapper（不可变 Builder 风格）
+        JsonMapper jsonMapper = JsonMapper.builder()
+                                          .activateDefaultTyping(typeValidator)
+                                          // 可选：设置日期格式、属性可见性等
+                                          // .findAndAddModules()   // 自动注册 JavaTimeModule 等
+                                          .build();
+
+        // 3. 创建序列化器
+        GenericJacksonJsonRedisSerializer serializer = new GenericJacksonJsonRedisSerializer(jsonMapper);
+        StringRedisSerializer stringSerializer = new StringRedisSerializer();
+
+        // 4. 配置 RedisTemplate
+        template.setKeySerializer(stringSerializer);
+        template.setHashKeySerializer(stringSerializer);
+        template.setValueSerializer(serializer);
+        template.setHashValueSerializer(serializer);
+
         template.afterPropertiesSet();
         return template;
     }

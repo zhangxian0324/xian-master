@@ -21,7 +21,7 @@ public class Huawei01 {
     public static int find(String str,String target) {
         log.info("str: " + str);
         log.info("target: " + target);
-        if(str == null || str.trim().length() == 0) {
+        if(str == null || str.trim().isEmpty()) {
             return -1;
         }
         int num = 0;

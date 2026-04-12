@@ -13,9 +13,22 @@
     <name>xian-webapp</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>21.0.5</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <!-- 或者使用 release 标签 -->
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
-
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.zhangxian</groupId>
+                <artifactId>xian-dependencies</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -31,7 +44,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -65,6 +77,7 @@
             <version>5.5.2</version>
             <scope>test</scope>
         </dependency>
+
 
     </dependencies>
 

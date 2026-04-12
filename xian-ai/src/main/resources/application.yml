@@ -1,0 +1,17 @@
+server:
+  port: 9098
+
+logging:
+  config: classpath:logback-spring.xml
+  file:
+    path: ./log/ai/
+
+# Spring AI Configuration
+spring:
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:your-api-key-here}  # Set via environment variable or replace with actual key
+    model:
+      chat: openai  # Use standard OpenAI (not openai-sdk to avoid conflicts)
+  main:
+    allow-bean-definition-overriding: true  # Allow bean overriding to resolve conflicts

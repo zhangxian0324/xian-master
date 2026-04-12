@@ -5,6 +5,9 @@
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xian-ai/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xian-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xian-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xian-dependencies/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/xian-dependencies/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xian-redisapp/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/xian-webapp/src/main/java" charset="UTF-8" />
   </component>
