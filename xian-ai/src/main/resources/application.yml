@@ -4,7 +4,7 @@ server:
 logging:
   config: classpath:logback-spring.xml
   file:
-    path: ./log/ai/
+    path: ./logs/ai/
 
 # Spring AI Configuration
 spring:
