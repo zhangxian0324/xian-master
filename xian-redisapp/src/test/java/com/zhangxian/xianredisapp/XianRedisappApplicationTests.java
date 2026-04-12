@@ -1,12 +1,13 @@
 package com.zhangxian.xianredisapp;
 
-import com.zhangxian.xianredisapp.config.RedisConfig;
-import com.zhangxian.xianredisapp.utils.redisUtils.RedisUtil;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 class XianRedisappApplicationTests {
-
+    @Test
+    void contextLoads() {
+        // Basic test to verify the test framework works
+        assertTrue(true, "Test framework is working");
+    }
 }

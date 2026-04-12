@@ -23,8 +23,8 @@
     <logback.version>1.5.32</logback.version>
     <slf4j.version>2.0.17</slf4j.version>
     <!-- Override JUnit versions for IntelliJ IDEA compatibility -->
-    <junit.version>5.9.3</junit.version>
-    <junit-platform.version>1.9.3</junit-platform.version>
+    <junit-jupiter.version>5.10.3</junit-jupiter.version>
+    <junit-platform.version>1.10.3</junit-platform.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -36,6 +36,34 @@
         <type>pom</type>
         <scope>import</scope>
         <exclusions>
+          <exclusion>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-launcher</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-engine</artifactId>
+          </exclusion>
+          <exclusion>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+          </exclusion>
           <exclusion>
             <groupId>tools.jackson</groupId>
             <artifactId>*</artifactId>
@@ -63,37 +91,37 @@
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>${junit.version}</version>
+        <version>5.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>${junit.version}</version>
+        <version>5.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
-        <version>${junit.version}</version>
+        <version>5.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-params</artifactId>
-        <version>${junit.version}</version>
+        <version>5.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>${junit-platform.version}</version>
+        <version>1.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-engine</artifactId>
-        <version>${junit-platform.version}</version>
+        <version>1.10.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-commons</artifactId>
-        <version>${junit-platform.version}</version>
+        <version>1.10.3</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
