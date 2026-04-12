@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BinSearchTest {
-    private Logger logger = LoggerFactory.getLogger(BinSearchTest.class);
+    private final Logger logger = LoggerFactory.getLogger(BinSearchTest.class);
     @Test
     public void find() {
         BinSearch binSearch = new BinSearch();

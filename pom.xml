@@ -9,11 +9,11 @@
     <description>parent</description>
     <packaging>pom</packaging>
     <modules>
+        <module>xian-dependencies</module>
         <module>xian-common</module>
         <module>xian-webapp</module>
         <module>xian-redisapp</module>
         <module>xian-ai</module>
-        <module>xian-dependencies</module>
     </modules>
 
     <build>

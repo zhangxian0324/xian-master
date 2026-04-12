@@ -15,20 +15,18 @@ public class jxUtil {
     public int countSeq (String mystr) {
         String sampleStr = "ccbft";
         int resultInt = 0;
-        if (mystr== null || mystr.length() < 4) {
+        if (mystr == null || mystr.length() < sampleStr.length()) {
             return 0;
         }
         String mystrLow = mystr.toLowerCase();
-        int len = mystrLow.length();
-        List<Character> list = new ArrayList<Character>();
-        for(int i = 0;i < len;i++){
-            char ch = mystrLow.charAt(i);
-            if(ch == 'c' || ch == 'b' || ch == 'f' || ch == 't'){
-                list.add(mystrLow.charAt(i));
-                break;
-            }
+        int count = 0;
+        int index = 0;
+
+        while ((index = mystrLow.indexOf(sampleStr, index)) != -1) {
+            count++;
+            index += sampleStr.length(); // Move past the current match
         }
-        resultInt = list.size() / 4;
-        return list.size() / 4;
+
+        return count;
     }
 }
